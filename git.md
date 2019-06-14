@@ -47,10 +47,11 @@ git remote -v
 - git checkout -- file  
 丢弃工作区修改
 回退到暂存区（如果暂存区不为空）或版本库最新版本（暂存区为空，即commit之后没有add操作）
-![3个场景](图片地址 ''图片title'')
+![3个场景](https://github.com/wu-gu/Notes/blob/master/git%26github/images/3%E4%B8%AA%E5%9C%BA%E6%99%AF.png "来源：https://www.liaoxuefeng.com/wiki/896043488029600/900388704535136")
 - Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作  
 git stash  
 将当前工作区保存，先修复bug
+![git stash](https://github.com/wu-gu/Notes/blob/master/git%26github/images/git-stash.png "来源：https://www.liaoxuefeng.com/wiki/896043488029600/900388704535136")
  
 
 
@@ -72,7 +73,7 @@ git checkout -t origin/dev = git checkout -b dev origin/dev = git checkout dev
 - 介绍git网站  
 阮一峰：http://www.ruanyifeng.com/blog/2014/06/git_remote.html
 
-- git结合实际，比较实用  
+- git结合实际，比较实用，建议去全部过一遍  
 廖雪峰：https://www.liaoxuefeng.com/wiki/896043488029600
 
 - git API网站  
