@@ -1,7 +1,7 @@
 
 # 常用操作：
 
-## 分支基本操作(branch、checkout)：
+## 分支基本操作(branch、checkout)
 - git branch dev  
 创建分支
 - git checkout dev  
