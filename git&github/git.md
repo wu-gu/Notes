@@ -13,12 +13,13 @@
 - git branch -d dev  
 删除本地分支(当然，删除之前必须切换到其他分支)
 - git push origin --delete dev2  
-git push origin :dev(推送空分支相当于删除)  
+= git push origin :dev(推送空分支相当于删除)  
 删除远程仓库分支
+- 查看本地分支
 - git branch -a  
 查看本地与远程仓库分支
 - git branch -r  
-查看远程仓库分支
+查看远程仓库分支(可以切换到远程分支中查看远程仓库的分支情况，如git checkout origin/master)
 
 
 ## 远程仓库基本操作(remote)
@@ -31,6 +32,22 @@ git remote -v
 将本地分支与远程仓库分支关联起来
 
 
+## 提取(fetch)、拉取(push)
+- git fetch <远程主机名> <远程分支名>
+将远程主机的某个分支提取到本地仓库中，如将远程master分支更新到**本地仓库的远程分支**origin/master中  
+- git fetch <远程主机名>
+将远程仓库的所有分支提取到本地仓库中
+- git pull <远程主机名> <远程分支名>:<本地分支名>
+提取远程主机某个分支的更新，再与本地的指定分支合并
+- git pull <远程主机名> <远程分支名>
+提取远程主机某个分支的更新，再与本地的当前分支合并
+- git pull <远程主机名>
+本地的当前分支自动与对应的origin主机"追踪分支"（remote-tracking branch）进行合并(当前分支与远程分支已存在追踪关系)
+- git pull
+当当前分支只与一个远程主机的分支建立跟踪关系时时，可如此简写
+- git pull origin next = git fetch origin next + git merge origin/next
+
+
 ## 推送操作(push)
 - git push <远程主机名> <本地分支名>:<远程分支名>  
 推送的标准格式
@@ -39,9 +56,10 @@ git remote -v
 - git push -u origin master  
 将本地的master分支推送到origin主机，同时指定origin为默认主机，后面就可以不加任何参数。-u指定默认主机
 - git push origin master  
-将本地的master分支推送到origin主机的master分支。如果master不存在，则会被新建。 
+将本地的master分支推送到origin主机的master分支。如果远程主机的master不存在，则会被新建。 
 - git push --all origin  
 将所有本地分支都推送到origin主机
+- push成功后会同步更新本地仓库的远程分支
 
 
 ## 回退操作(reset)
