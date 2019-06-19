@@ -33,17 +33,17 @@ git remote -v
 
 
 ## 提取(fetch)、拉取(push)
-- git fetch <远程主机名> <远程分支名>
+- git fetch <远程主机名> <远程分支名>  
 将远程主机的某个分支提取到本地仓库中，如将远程master分支更新到**本地仓库的远程分支**origin/master中  
-- git fetch <远程主机名>
+- git fetch <远程主机名>  
 将远程仓库的所有分支提取到本地仓库中
-- git pull <远程主机名> <远程分支名>:<本地分支名>
+- git pull <远程主机名> <远程分支名>:<本地分支名>  
 提取远程主机某个分支的更新，再与本地的指定分支合并
-- git pull <远程主机名> <远程分支名>
+- git pull <远程主机名> <远程分支名>  
 提取远程主机某个分支的更新，再与本地的当前分支合并
-- git pull <远程主机名>
+- git pull <远程主机名>  
 本地的当前分支自动与对应的origin主机"追踪分支"（remote-tracking branch）进行合并(当前分支与远程分支已存在追踪关系)
-- git pull
+- git pull  
 当当前分支只与一个远程主机的分支建立跟踪关系时时，可如此简写
 - git pull origin next = git fetch origin next + git merge origin/next
 
