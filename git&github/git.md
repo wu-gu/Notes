@@ -92,14 +92,20 @@ git reflog
 可以查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）
 
 
-## 管理修改(主要针对当前工作没完成想修改以前的内容)
-- git checkout -- file  
+## 管理修改
+- git checkout -- <file>  
 丢弃工作区修改，回退到暂存区（如果暂存区不为空）或版本库最新版本（暂存区为空，即commit之后没有add操作）
 ![3个场景](images/3%E4%B8%AA%E5%9C%BA%E6%99%AF.png "来源：https://www.liaoxuefeng.com/wiki/896043488029600/900388704535136")
-- git stash
+- git reset HEAD <file>  
+把暂存区的修改撤销掉（unstage），重新放回工作区。撤销add操作，将暂存区该文件的版本回退到仓库的HEAD版本，即提交的最新版本
+- git stash  
 Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作  
 将当前工作区保存，切换到别的分支先修复bug，然后再回到原分支恢复工作区  
 ![git stash](images/git-stash.png "来源：https://www.liaoxuefeng.com/wiki/896043488029600/900388704535136")
+- git rm --cached <file>  
+撤销对某个文件的跟踪关系，不再对其进行跟踪，但是仍然保留在工作区，下次commit的时候就会从版本库中删除该文件
+- git mv <fromFile> <toFile>  
+文件重命名操作
  
 
 
@@ -115,9 +121,10 @@ git clone默认会把远程仓库的master给clone下来，在本地默认创建
 git checkout -t origin/dev = git checkout -b dev origin/dev = git checkout dev  
 上面的3个操作时一致的，会从origin上下载其他分支  
 参考来源:https://www.jianshu.com/p/0fe715a7fbb3
+- Git Bash中进行每次git操作后，都会有提示操作，特别是git status后的提示，真的很有提示作用
+- VS上面可视化的Git操作挺不错的，特别是撤销多个文件的add操作时。
 
 # git详细介绍
-
 - 介绍git网站  
 阮一峰：http://www.ruanyifeng.com/blog/2014/06/git_remote.html
 
